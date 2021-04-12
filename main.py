@@ -1,6 +1,6 @@
 from wsgiref.util import setup_testing_defaults
 from wsgiref.simple_server import make_server
-from benafrwork.core import Application
+from benaxfrwork.core import Application
 import views
 
 urlpatterns = {
@@ -11,7 +11,7 @@ urlpatterns = {
 
 def secret_controller(request):
     # пример Front Controller
-    request['secret_key'] = 'SECRET'
+    request['check'] = 'checked'
 
 
 front_controllers = [
@@ -20,6 +20,6 @@ front_controllers = [
 
 application = Application(urlpatterns, front_controllers)
 with make_server('', 8000, application) as httpd:
-    print(111)
+    print('Server started at port: 8000')
     httpd.serve_forever()
 
