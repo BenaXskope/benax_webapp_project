@@ -17,11 +17,6 @@ def secret_controller(request):
 front_controllers = [
     secret_controller
 ]
-<<<<<<< .merge_file_a12716
-
-
-=======
->>>>>>> .merge_file_a09056
 
 
 application = Application(urlpatterns, front_controllers)
