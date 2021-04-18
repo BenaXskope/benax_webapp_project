@@ -8,14 +8,15 @@ urlpatterns = {
     '/about/': views.about_view,
 }
 
-front_controllers = [
-    secret_controller
-]
-
 
 def secret_controller(request):
     # пример Front Controller
     request['check'] = 'checked'
+
+
+front_controllers = [
+    secret_controller
+]
 
 
 
