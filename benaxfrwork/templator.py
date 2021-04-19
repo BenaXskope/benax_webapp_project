@@ -1,5 +1,5 @@
-import os
 from jinja2 import Template
+import os
 
 
 def render(template_name, folder='templates', **kwargs):

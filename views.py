@@ -1,12 +1,11 @@
-from benaxfrwork.templates import render
+from benaxfrwork.templator import render
 
 
-def main_view(request):
-    check = request.get('check', None)
-    # Используем шаблонизатор
-    return '200 OK', render('index.html', check=check)
+class Index:
+    def __call__(self, request):
+        return '200 OK', render('index.html', date=request.get('date', None))
 
 
-def about_view(request):
-    # Просто возвращаем текст
-    return '200 OK', "About"
+class About:
+    def __call__(self, request):
+        return '200 OK', 'about'
